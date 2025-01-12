@@ -11,11 +11,11 @@
    body {
             font-family: 'Roboto', sans-serif;
         }
- .carousel {
+.carousel {
     display: flex;
     overflow: hidden; /* Hide overflowing content */
     scroll-snap-type: x mandatory;
-    align-items: center; /* Center-align the images vertically */
+    align-items: center;
     animation: scroll 10s linear infinite; /* Add the scrolling animation */
 }
 
@@ -36,7 +36,7 @@
         transform: translateX(0); /* Start at the beginning */
     }
     100% {
-        transform: translateX(-300%); /* Scroll to the last image, adjust based on total images */
+        transform: translateX(calc(-100% * 6)); /* Scroll through all images */
     }
 }
   </style>
