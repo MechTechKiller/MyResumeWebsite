@@ -11,23 +11,34 @@
    body {
             font-family: 'Roboto', sans-serif;
         }
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            align-items: center; /* Center-align the images vertically */
-        }
+ .carousel {
+    display: flex;
+    overflow: hidden; /* Hide overflowing content */
+    scroll-snap-type: x mandatory;
+    align-items: center; /* Center-align the images vertically */
+    animation: scroll 10s linear infinite; /* Add the scrolling animation */
+}
 
-        .carousel div {
-            flex-shrink: 0; /* Prevent the items from shrinking */
-            scroll-snap-align: center;
-        }
+.carousel div {
+    flex-shrink: 0; /* Prevent the items from shrinking */
+    scroll-snap-align: center;
+    width: 100%; /* Ensure all images have equal width */
+}
 
-        .carousel img {
-            max-width: 100%; /* Fit the image within the container width */
-            height: auto; /* Maintain the image's aspect ratio */
-            display: block; /* Remove unwanted gaps below the image */
-        }
+.carousel img {
+    max-width: 100%; /* Fit the image within the container width */
+    height: auto; /* Maintain the image's aspect ratio */
+    display: block; /* Remove unwanted gaps below the image */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Start at the beginning */
+    }
+    100% {
+        transform: translateX(-600%); /* Scroll to the last image, adjust based on total images */
+    }
+}
   </style>
  </head>
  <body class="bg-gray-100 text-gray-800">
