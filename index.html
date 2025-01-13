@@ -13,35 +13,31 @@
         }
 .carousel {
     display: flex;
-    overflow: hidden; /* Hide the overflowing content */
+    overflow: hidden; /* Hide overflowing content */
     scroll-snap-type: x mandatory;
-    width: 100%; /* Adjust to your container width */
-    position: relative;
+    align-items: center; /* Center-align the images vertically */
+    animation: scroll 10s linear infinite; /* Add the scrolling animation */
 }
 
 .carousel div {
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent the items from shrinking */
     scroll-snap-align: center;
-    width: 100%; /* Set each image to occupy full width */
+    width: 100%; /* Ensure all images have equal width */
 }
 
 .carousel img {
-    width: 100%; /* Images take up full width of their container */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
+    max-width: 100%; /* Fit the image within the container width */
+    height: auto; /* Maintain the image's aspect ratio */
+    display: block; /* Remove unwanted gaps below the image */
 }
 
 @keyframes scroll {
     0% {
-        transform: translateX(0);
+        transform: translateX(0); /* Start at the beginning */
     }
     100% {
-        transform: translateX(-300%); /* Adjust based on the number of images */
+        transform: translateX(-600%); /* Scroll to the last image, adjust based on total images */
     }
-}
-
-.carousel {
-    animation: scroll 10s linear infinite;
 }
   </style>
  </head>
